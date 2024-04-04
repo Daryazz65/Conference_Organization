@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conference_Organization.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace Conference_Organization
     /// </summary>
     public partial class App : Application
     {
+        public static ConferenceEntities context = new ConferenceEntities();
     }
 }

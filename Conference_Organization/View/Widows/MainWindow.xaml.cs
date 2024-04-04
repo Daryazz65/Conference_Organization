@@ -23,6 +23,8 @@ namespace Conference_Organization
         public MainWindow()
         {
             InitializeComponent();
+
+            EventsLv.ItemsSource = App.context.Event.ToList();
         }
     }
 }
