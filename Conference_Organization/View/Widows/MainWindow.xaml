@@ -10,26 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Height="900" Width="1600">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
-
-        <ListView Name="EventsLv" Grid.Row="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Логотип"
-                                    DisplayMemberBinding="{Binding Logo}"/>
-                    <GridViewColumn Header="Название мероприятия"
-                                    DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Направление мероприятия"
-                                    DisplayMemberBinding="{Binding DirectionId}"/>
-                    <GridViewColumn Header="Дата"
-                                    DisplayMemberBinding="{Binding Date}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <!-- В элемент Frame загружаются страницы -->
+        <Frame Name="MainFrame"/>
         
     </Grid>
 </Window>

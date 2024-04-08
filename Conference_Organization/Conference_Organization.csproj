@@ -64,6 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\Pages\EventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Widows\Authentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Widows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +100,12 @@
     </Compile>
     <Compile Include="Model\Event.cs">
       <DependentUpon>ConferenceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Widows\Authentication.xaml.cs">
+      <DependentUpon>Authentication.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Widows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -135,7 +149,6 @@
   <ItemGroup>
     <Folder Include="AppData\" />
     <Folder Include="Styles\" />
-    <Folder Include="View\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\ConferenceModel.Context.tt">

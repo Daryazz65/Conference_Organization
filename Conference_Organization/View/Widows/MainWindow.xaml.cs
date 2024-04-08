@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conference_Organization.View.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,9 @@ namespace Conference_Organization
         {
             InitializeComponent();
 
-            EventsLv.ItemsSource = App.context.Event.ToList();
+            // Реализуем страничную навигацию.
+            // В элемент Frame загрузить экземпляр страницы, которую нужно отобразить.
+            MainFrame.Navigate(new EventsPage());
         }
     }
 }
