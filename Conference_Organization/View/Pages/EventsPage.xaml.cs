@@ -1,4 +1,5 @@
 ﻿using Conference_Organization.Model;
+using Conference_Organization.View.Widows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,60 @@ namespace Conference_Organization.View.Pages
     /// </summary>
     public partial class EventsPage : Page
     {
+        // Передали записи из таблицы БД в программный список (направления).
+        List<Direction> directions = App.context.Direction.ToList(); 
+
+        // Передали записи из таблицы БД в программный список (мероприятия).
+        List<Event> events = App.context.Event.ToList();
+
         public EventsPage()
         {
             InitializeComponent();
 
             EventsLv.ItemsSource = App.context.Event.ToList();
 
+            // Вставляем программно направление в ComboBox.
+            directions.Insert(0, new Direction { Name = "Все направления" });
+
             // Заполняем выпадающий список данными из таблицы Direction.
-            DirectionsCmb.ItemsSource = App.context.Direction.ToList();
+            DirectionsCmb.ItemsSource = directions;
         }
 
         private void DirectionsCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Direction selectedDirection = DirectionsCmb.SelectedItem as Direction;
 
-            EventsLv.ItemsSource = App.context.Event.Where(ev => ev.DirectionId == selectedDirection.Id).ToList();
+            if (DirectionsCmb.SelectedIndex == 0)
+            {
+                EventsLv.ItemsSource = events;
+            }
+            else
+            {
+            EventsLv.ItemsSource = events.Where(ev => ev.DirectionId == selectedDirection.Id).ToList();
+            }
+        }
+
+        
+
+        // Реализовать поиск по дате.
+        private void EventDateDp_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EventDateDp.SelectedDate != null)
+            {
+                EventsLv.ItemsSource = events.Where(ev => ev.Date == EventDateDp.SelectedDate);
+            }
+            else
+            {
+                EventsLv.ItemsSource = events;
+            }
+        }
+
+        // Реализовать переход на окно авторизации и само окно.
+        private void enterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Authentication authentication = new Authentication();
+            authentication.Show();
+         
         }
     }
 }
