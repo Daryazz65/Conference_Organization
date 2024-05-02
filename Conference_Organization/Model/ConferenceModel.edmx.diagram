@@ -5,9 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d749903c6d63469ea495fdbcdf5c4188" Name="Diagram1">
-        <EntityTypeShape EntityType="ZININAconferenceModel.Direction" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ZININAconferenceModel.Event" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="ZININAconferenceModel.FK_Event_Direction" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ZININAconferenceModel.Direction" Width="1.5" PointX="2.75" PointY="5.25" />
+        <EntityTypeShape EntityType="ZININAconferenceModel.Event" Width="1.5" PointX="5" PointY="4.875" />
+        <EntityTypeShape EntityType="ZININAconferenceModel.Gender" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="ZININAconferenceModel.Role" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="ZININAconferenceModel.User" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="ZININAconferenceModel.FK_Event_Direction" />
+        <AssociationConnector Association="ZININAconferenceModel.FK_User_Gender" />
+        <AssociationConnector Association="ZININAconferenceModel.FK_User_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

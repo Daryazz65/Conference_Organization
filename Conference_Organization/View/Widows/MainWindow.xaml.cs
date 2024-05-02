@@ -1,4 +1,5 @@
-﻿using Conference_Organization.View.Pages;
+﻿using Conference_Organization.AppData;
+using Conference_Organization.View.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,10 @@ namespace Conference_Organization
 
             // Реализуем страничную навигацию.
             // В элемент Frame загрузить экземпляр страницы, которую нужно отобразить.
+            FrameHelper.mainFrame = MainFrame;
+            
             MainFrame.Navigate(new EventsPage());
+
         }
     }
 }

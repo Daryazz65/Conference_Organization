@@ -29,7 +29,7 @@
                       DisplayMemberPath="Name"
                       SelectionChanged="DirectionsCmb_SelectionChanged"/>
             <DatePicker Name="EventDateDp" SelectedDateChanged="EventDateDp_SelectedDateChanged"  Grid.Column="2"/>
-            <Button Name="enterBtn" Click="enterBtn_Click" Content="Войти" Margin="10" Grid.Column="5"/>
+            <Button Name="LoginBtn" Click="LoginBtn_Click" Content="Войти" Margin="10" Grid.Column="5"/>
         </Grid>
 
         <ListView Name="EventsLv" Grid.Row="2">

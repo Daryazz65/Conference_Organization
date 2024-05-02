@@ -68,6 +68,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\Jury.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Moderator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Organizator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\Participant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Widows\Authentication.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +96,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppData\AutheticationHelper.cs" />
+    <Compile Include="AppData\FrameHelper.cs" />
     <Compile Include="Model\ConferenceModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,8 +119,29 @@
     <Compile Include="Model\Event.cs">
       <DependentUpon>ConferenceModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Gender.cs">
+      <DependentUpon>ConferenceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Role.cs">
+      <DependentUpon>ConferenceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>ConferenceModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\EventsPage.xaml.cs">
       <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Jury.xaml.cs">
+      <DependentUpon>Jury.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Moderator.xaml.cs">
+      <DependentUpon>Moderator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Organizator.xaml.cs">
+      <DependentUpon>Organizator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\Participant.xaml.cs">
+      <DependentUpon>Participant.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Widows\Authentication.xaml.cs">
       <DependentUpon>Authentication.xaml</DependentUpon>
@@ -147,7 +186,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppData\" />
     <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>

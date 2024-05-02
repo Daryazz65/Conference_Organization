@@ -73,9 +73,14 @@ namespace Conference_Organization.View.Pages
         // Реализовать переход на окно авторизации и само окно.
         private void enterBtn_Click(object sender, RoutedEventArgs e)
         {
-            Authentication authentication = new Authentication();
-            authentication.Show();
+            
          
+        }
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Authentication authentication = new Authentication();
+            authentication.ShowDialog();
         }
     }
 }

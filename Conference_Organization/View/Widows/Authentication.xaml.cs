@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conference_Organization.AppData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,15 @@ namespace Conference_Organization.View.Widows
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AutheticationHelper.CheckData(LoginTb.Text, PasswordPb.Password);
+        }
+
+        // Создать событие Click на кнопку для входа.
+        // Вызвать метод CheckData.
+
+
     }
 }

@@ -5,28 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Conference_Organization.View.Widows"
         mc:Ignorable="d"
-        Title="Authentication" Height="450" Width="800">
-    <Grid>
+        Title="Authentication" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"  SizeToContent="WidthAndHeight">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="50" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Логин: " Grid.Row="1"/>
-        <TextBlock Text="Пароль: " Grid.Row="3"/>
-        <TextBox Grid.Row="1" Grid.Column="1"/>
-        <PasswordBox Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="Логин: "/>
+        <TextBox Name="LoginTb" Grid.Column="1"/>
+        
+        <TextBlock Text="Пароль: " Grid.Row="2"/>
+        <PasswordBox Name="PasswordPb" Grid.Row="2" Grid.Column="1"/>
+        
         <CheckBox Content="Запомнить меня!!!" Grid.Row="4" Grid.Column="1"/>
-        <Button Content="Войти" Grid.Column="1" Grid.Row="6"/>
+        <Button Click="Button_Click" Content="Войти" Grid.Column="1" Grid.Row="6"/>
 
     </Grid>
 </Window>
