@@ -27,7 +27,16 @@ namespace Conference_Organization.View.Widows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AutheticationHelper.CheckData(LoginTb.Text, PasswordPb.Password);
+            if(AutheticationHelper.CheckData(LoginTb.Text, PasswordPb.Password) == true)
+            {
+                // yspesh 
+            }
+            else
+            {
+                // neyspesh
+
+                MessageBox.Show("пользователь не найден!");
+            }
         }
 
         // Создать событие Click на кнопку для входа.
