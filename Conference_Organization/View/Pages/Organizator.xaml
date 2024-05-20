@@ -5,10 +5,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Conference_Organization.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="900" d:DesignWidth="1600"
       Title="Organizator">
 
-    <Grid>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="780" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="780" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="180" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="180" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="180" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="DobroeYtroTbl" Text="доброе утро!!!" Grid.Column="3" HorizontalAlignment="Center"/>
+        <Button Name="MeropritBtn" Click="MeropritBtn_Click" Grid.Row="2" Grid.Column="2" Content="Мероприятия"/>
+        <Button Name="YchastnikBtn" Click="YchastnikBtn_Click" Grid.Row="4" Grid.Column="2" Content="Участники"/>
+        <Button Name="JuryBtn" Click="JuryBtn_Click" Grid.Row="6" Grid.Column="2" Content="Жюри"/>
+        <Button Name="ProfilBtn" Click="ProfilBtn_Click" Grid.Row="6" Grid.Column="0" Content="Мой профиль"/>
         
+        <Image Source="/resource/noise.jpg" Grid.RowSpan="5"/>
+            
+        
+
+
     </Grid>
 </Page>

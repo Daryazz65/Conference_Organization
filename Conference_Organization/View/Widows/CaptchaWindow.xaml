@@ -14,8 +14,9 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+        <Image Source="/resource/noise.jpg" Margin="10"/>
         <TextBlock Name="CaptchTbl"/>
         <TextBox Name="CaptchTb" Grid.Row="2" HorizontalAlignment="Center"/>
-        <Button Name="EnterBtn" Content="Ввод" Grid.Row="4" HorizontalAlignment="Center"/>
+        <Button Name="EnterBtn" Click="EnterBtn_Click" Content="Ввод" Grid.Row="4" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

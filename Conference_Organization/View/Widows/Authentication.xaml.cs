@@ -30,18 +30,48 @@ namespace Conference_Organization.View.Widows
             if(AutheticationHelper.CheckData(LoginTb.Text, PasswordPb.Password) == true)
             {
                 // yspesh 
+                SaveUserData();
+                Close();
+
             }
             else
             {
                 // neyspesh
+                if (BlockSystemHelper.IncreaseIncorrectInput() == 3)
+                {
+                    BlockWindow blockSystemWindow = new BlockWindow();
 
-                MessageBox.Show("пользователь не найден!");
+                    if(blockSystemWindow.ShowDialog() == true)
+                    {
+                        BlockSystemHelper.incorrectInputCount = 0;
+                    }
+                }
             }
         }
 
-        // Создать событие Click на кнопку для входа.
-        // Вызвать метод CheckData.
+        private void SaveUserData()
+        {
+            if (RememberMeCb.IsChecked == true)
+            {
+                // сохр-е данных
+                Properties.Settings.Default.LoginValue = LoginTb.Text;
+                Properties.Settings.Default.PasswordValue = PasswordPb.Password;
+            }
+            else
+            {
+                Properties.Settings.Default.LoginValue = string.Empty;
+                Properties.Settings.Default.PasswordValue = string.Empty;
+            }
 
+            // фикс-уем изм-я
+            Properties.Settings.Default.Save();
+        }
+      
+        private void LoadUserData()
+        {
+            LoginTb.Text = Properties.Settings.Default.LoginValue;
+            PasswordPb.Password = Properties.Settings.Default.PasswordValue;
+        }
 
     }
 }
